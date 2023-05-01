@@ -1,0 +1,133 @@
+ <!DOCTYPE>
+    <html>
+    <head>
+   <meta charset="UTF-8">
+  <title>Your Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    </head>
+     <style>
+       #button{
+         width: 80px;
+          height: 50px;
+          border-radius: 50px; 
+         }
+       #div{
+       height: 497px;
+       width: 350px;
+       color: black;
+       text-align: right;
+       background-color: skyblue;
+       line-height: random;
+      
+       }
+      #input{
+         width: 300.5px;
+         height: 50px;
+         border-radius: 10px;
+         background-color: grey;
+       }
+      #none{
+       width:350px;
+        height: 40px;
+        background-color: skyblue;
+        color: grey;
+        text-align: center;
+        line-height: 40px;
+         }
+        #btn{
+         width: 38px;
+         border-radius: 10px;
+         height: 40px;
+         background-color: blue;
+       
+         color: white;
+        }
+          #layout1{
+            background-color: grey;
+             color: white;
+             text-align: left;
+             border-radius: 30px;
+             width: 80%;
+             height: auto;
+             padding: 10px;
+            } 
+         #layout2{
+           background-color: green;
+           color: white;
+           border-radius: 30px;
+           padding: 10px;
+           text-align: right;
+           width: 80%;
+           height: auto;
+           margin-left: 52px;
+          }
+      </style>
+    <body>
+        
+     <div id="none"><h1>Elktrum</h1></div>
+     <div id="div"></div>
+      
+      <input id="input" onclick="input()"></div>
+       <button id="btn" onclick="btn()">send</button>
+   <script>
+const a= prompt("Enter passcode. if passcode is incorrect the bot will not work: ");
+    
+       if(a=='EADYIR1357'){
+      function btn() {
+        var inputField = document.getElementById("input");
+        var output = document.getElementById("div");
+        var input = inputField.value.toLowerCase();
+    
+			// Check for keywords and display appropriate response
+			if (input.includes("hello") || input.includes("hi") || input.includes("hello Elktrum")) {
+				output.innerHTML = "<h4 id='layout2'>"+input+"<br>"+"<h4 id='layout1'>"+"Hello there! how can i assist you today?";
+				var utterance = new SpeechSynthesisUtterance("Hello there! how can i assist you today!?");
+                           speechSynthesis.speak(utterance);
+        
+			} else if (input.includes("bye")) {
+				output.innerHTML = 
+"<h4 id='layout2'>"+input+"<br>"+"<h4 id='layout1'>"+"Goodbye!";
+             var utterance = new SpeechSynthesisUtterance("Goodbye!!");
+                           speechSynthesis.speak(utterance);
+        
+			} else if (input.includes("how are you")) {
+				output.innerHTML = "<h4 id='layout2'>"+input+"<br>"+"<h4 id='layout1'>"+"I'm fine, i'm glad you ask.";
+var utterance = new SpeechSynthesisUtterance("I'm fine, i'm glad you ask");
+                           speechSynthesis.speak(utterance);
+        
+			} else if (input.includes("name")) {
+				output.innerHTML = "<h4 id='layout2'>"+input+"<br>"+"<h4 id='layout1'>"+"My name is Elktrum.";
+var utterance = new SpeechSynthesisUtterance("My name is Elktrum Elk");
+                           speechSynthesis.speak(utterance);
+        
+			}
+                          else if (input.includes("age")) {
+				output.innerHTML ="<h4 id='layout2'>"+input+"<br>"+"<h4 id='layout1'>"+"i am still under development."+"<br>"+"But i was started developed in Apr 29/2023";
+var utterance = new SpeechSynthesisUtterance("i am still under developement but i was developed in Apr 29, 2023");
+                           speechSynthesis.speak(utterance);
+        
+			}
+                          else if(input.includes("date")){
+                           output.innerHTML = "<h4 id='layout2'>"+input+"<br>"+"<h4 id='layout1'>"+Date();
+var utterance = new SpeechSynthesisUtterance("The date is "+Date());
+                           speechSynthesis.speak(utterance);
+        
+                           }
+                            else if(input.includes("time")){
+                              let currDate= new Date();
+                              output.innerHTML = "<h4 id='layout2'>"+input+"<h4 id='layout1'>"+"The time is "+currDate.getHours();
+                               }
+                            
+
+           
+                           else {
+                             window.location.href = "https://www.google.com/search?q="+input;
+			}}
+        
+         } else{
+      document.getElementById("div").innerHTML= "<h1 style='font-size: 30px; text-align: center; line-height: 200px'>"+"WRONG PASSCODE";
+       ;
+         }
+  </script>
+    </body>
+     </html>
